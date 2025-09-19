@@ -71,7 +71,7 @@ if source == "Upload an image":
     if uploaded_file is not None:
         try:
             image = Image.open(uploaded_file)
-            st.image(image, caption="Uploaded Meal Image.", use_container_width=True)
+            st.image(image, caption="Uploaded Meal Image.", use_column_width=True)
         except Exception as e:
             st.error(f"Error loading image: {e}")
 else:  # Take a picture
@@ -79,7 +79,7 @@ else:  # Take a picture
     if captured_image:
         captured_image_bytes = captured_image.getvalue()
         # Optionally display the captured image
-        st.image(captured_image, caption="Captured Meal Image.", use_container_width=True)     
+        st.image(captured_image, caption="Captured Meal Image.", use_column_width=True)     
 
 submit = st.button("Get My Personalized Plan")
 
@@ -130,3 +130,4 @@ if submit:
 
 
             st.error(f"An error occured: {e}")        
+
